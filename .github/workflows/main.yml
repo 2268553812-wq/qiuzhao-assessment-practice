@@ -32,7 +32,7 @@ jobs:
           rm -f package-lock.json
           npm config set registry https://registry.npmjs.org/
           npm install
-          npm run build
+          npx vite build
           
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
