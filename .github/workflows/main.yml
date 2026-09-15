@@ -29,8 +29,10 @@ jobs:
 
       - name: Install and build
         run: |
-          npm install vite @vitejs/plugin-react typescript react react-dom lucide-react recharts tailwindcss postcss autoprefixer
-          npx vite build
+          rm -f package-lock.json
+          npm config set registry https://registry.npmjs.org/
+          npm install
+          npm run build
           
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
